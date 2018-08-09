@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo</title>
+</head>
+<body>
+<h1>{{title}}</h1>
+<form action="/" method="post" >
+	<input type="text" name="name" value="{%if errors.name %}{{errors.name.value}}{% else %}{{user.name}}{% endif %}">
+    {%if errors.name %}
+     {{errors.name.msg}}
+    {% endif %}<br>
+	
+	<input type="password" name="pass" value="{%if errors.pass %}{{errors.pass.value}}{% else %}{{user.pass}}{% endif %}">
+	 {%if errors.pass %}
+     {{errors.pass.msg}}
+    {% endif %}<br>
+	<input type="submit" name="submit" value="submit">
+</form>
+
+</body>
+</html>
